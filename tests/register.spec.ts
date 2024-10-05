@@ -19,19 +19,19 @@ test.beforeEach(async ({ browser }) => {
   trackerPage = new TrackerPage(page);
 });
 
-test("Successful Register", async () => {
+test("Successful Registration", async () => {
   await loginPage.clickRegister();
   await registerPage.fillSignup();
   await registerPage.clickOnSubmit();
   await trackerPage.checkHeader();
 });
 
-test("Fill nothing in Register", async () => {
+test("Cannot Submit Empty Registration Form", async () => {
   await loginPage.clickRegister();
   await loginPage.isSubmitButtonDisabled();
 });
 
-test("Invalid email in Register", async () => {
+test("Shows Error for Invalid Email", async () => {
   await loginPage.clickRegister();
   await registerPage.fillSignup({ email: "test" });
   await registerPage.checkEmphasisTextForFieldContains(
@@ -41,7 +41,7 @@ test("Invalid email in Register", async () => {
   await loginPage.isSubmitButtonDisabled();
 });
 
-test("Invalid password in Register", async () => {
+test("Shows Minimum Password Length Error", async () => {
   await loginPage.clickRegister();
   await registerPage.fillSignup({ password: "test" });
   await registerPage.checkEmphasisTextForFieldContains(
@@ -51,7 +51,7 @@ test("Invalid password in Register", async () => {
   await loginPage.isSubmitButtonDisabled();
 });
 
-test("Empty fields in Register", async () => {
+test("Shows Required Field Messages When Fields Are Cleared", async () => {
   await loginPage.clickRegister();
   await registerPage.fillSignup();
   await registerPage.clearSignup();

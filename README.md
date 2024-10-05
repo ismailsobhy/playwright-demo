@@ -51,3 +51,7 @@ The testcase are stored in `tests/login.spec.ts` and `tests/register.spec.ts`. A
 # Github actions
 
 A Github action runs exists in .github/workflows/playwright.yml and the report is retained for 10 days.
+
+# Runs
+
+You can check the run and the report at https://github.com/ismailsobhy/playwright-tractive/actions/runs/11194656691

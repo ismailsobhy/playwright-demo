@@ -1,14 +1,13 @@
-import { Page, expect, BrowserContext, Locator } from "@playwright/test";
+import { Page, expect, Locator } from "@playwright/test";
 
 export class BasePage {
   protected page: Page;
-  protected context: BrowserContext;
   readonly submitButton: Locator;
   constructor(page: Page) {
     this.page = page;
     this.submitButton = page.locator("button[type='submit']");
   }
-  Í;
+
   async isSubmitButtonDisabled() {
     await expect(this.submitButton).toBeVisible();
     await expect(this.submitButton).toBeDisabled();

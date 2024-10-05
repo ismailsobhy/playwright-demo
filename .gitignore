@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Playwright test results and artifacts
+test-results/
+*.trace
+*.log
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+
+# Environment variables
+.env
+.env.local
+
+# IDE configurations
+.vscode/

@@ -13,27 +13,27 @@ test.beforeEach(async ({ browser }) => {
   accountPage = new AccountPage(page);
 });
 
-test("Successful login", async () => {
+test("Successful Login with Valid Credentials", async () => {
   await loginPage.fillLogin("ismailsobhy@gmail.com", "test1234");
   await loginPage.clickOnSubmit();
   await accountPage.checkIfOnAccountPage();
 });
 
-test("Fill email only in login", async () => {
+test("Cannot Submit Login with Email Only", async () => {
   await loginPage.fillLogin("ismailsobhy@gmail.com", "");
   await loginPage.isSubmitButtonDisabled();
 });
 
-test("Fill invalid email and passowrd in login", async () => {
+test("Cannot Submit with Invalid Email and Password", async () => {
   await loginPage.fillLogin("test", "test");
   await loginPage.isSubmitButtonDisabled();
 });
 
-test("Fill password only in login", async () => {
+test("Cannot Submit Login with Password Only", async () => {
   await loginPage.fillLogin("", "test1234");
   await loginPage.isSubmitButtonDisabled();
 });
 
-test("Fill nothing in login", async () => {
+test("Cannot Submit Empty Login Form", async () => {
   await loginPage.isSubmitButtonDisabled();
 });

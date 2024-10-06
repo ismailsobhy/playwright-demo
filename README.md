@@ -54,4 +54,4 @@ A Github action runs exists in .github/workflows/playwright.yml and the report i
 
 # Runs
 
-You can check the run and the report at https://github.com/ismailsobhy/playwright-demo/actions/runs/11194656691
+You can check the run and the report at https://github.com/ismailsobhy/playwright-demo/actions/runs/11200498004

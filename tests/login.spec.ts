@@ -14,13 +14,13 @@ test.beforeEach(async ({ browser }) => {
 });
 
 test("Successful Login with Valid Credentials", async () => {
-  await loginPage.fillLogin("ismailsobhy@gmail.com", "test1234");
+  await loginPage.fillLogin("brucebanner@gmail.com", "test1234");
   await loginPage.clickOnSubmit();
   await accountPage.checkIfOnAccountPage();
 });
 
 test("Cannot Submit Login with Email Only", async () => {
-  await loginPage.fillLogin("ismailsobhy@gmail.com", "");
+  await loginPage.fillLogin("brucebanner@gmail.com", "");
   await loginPage.isSubmitButtonDisabled();
 });
 
